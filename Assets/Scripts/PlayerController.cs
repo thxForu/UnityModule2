@@ -20,11 +20,11 @@ public class PlayerController : MonoBehaviour
 
     private void InteractWithMovement()
     {
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
-        if (hasHit)
-        { 
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
+            if (hasHit)
             {
                 _mover.MoveTo(hit.point, speedFraction);
             }
